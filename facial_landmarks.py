@@ -12,7 +12,7 @@ mp_drawing_styles = mp.solutions.drawing_styles
 def LANDMARKS(img):
     sample_img = cv2.imread(img)
     gray = cv2.cvtColor(sample_img, cv2.COLOR_BGR2GRAY)
-    face_cascade = cv2.CascadeClassifier(r'Z:\Coding\Random projects\CV2_PROJECTS\haarcascade_frontalface_alt2.xml')
+    face_cascade = cv2.CascadeClassifier(r'haarcascade_frontalface_alt2.xml')
     faces = face_cascade.detectMultiScale(gray, 1.1, 4)
     
     for (x, y, w, h) in faces:
@@ -47,8 +47,7 @@ def compare_between_3_faces(img1,img2, img3):
     parent2_distance = calculate_distance(c_landmarks, p2_landmarks)
 
     if parent1_distance < parent2_distance:
-        print(f'The child resembles parent 1 more with {100 - (parent1_distance / parent2_distance) * 100:.2f}% confidence')
+        return (100-(parent1_distance/parent2_distance)), p1_img 
 
     elif parent2_distance < parent1_distance:
-        print(f'The child resembles parent 2 more with {100 - (parent2_distance / parent1_distance) * 100:.2f}% confidence')
-        
+        return (100-(parent2_distance/parent1_distance)), p2_img
