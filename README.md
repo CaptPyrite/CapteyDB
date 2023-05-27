@@ -2,7 +2,7 @@
 
 # Captey-DB: A Python-based Vector Database
 
-Captey-DB is a high-performance vector database developed by Fahim Ferdous, also known as Capt.Pyrite. Built on the concept of nearest neighbor search algorithms.
+Captey-DB is a high-performance vector database developed by Capt.Pyrite. Built on the concept of nearest neighbor search algorithms.
 
 
 ## Conclusion
